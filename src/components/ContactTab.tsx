@@ -3,204 +3,147 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from "react";
-import { Send, CheckCircle2, MessageSquare, Mail, Github, Compass, Twitter } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import React from "react";
+import { MessageSquare, Mail, Github, Twitter, Compass, ExternalLink } from "lucide-react";
+import { motion } from "motion/react";
+
+const available = true; // toggle this to false when busy
+
+const links = [
+  {
+    id: "discord",
+    icon: MessageSquare,
+    label: "Discord",
+    value: "kaitou6980",
+    href: null,
+    note: "Fastest way to reach me",
+    primary: true,
+  },
+  {
+    id: "email",
+    icon: Mail,
+    label: "Email",
+    value: "leminhgiabao@gmail.com",
+    href: "mailto:leminhgiabao@gmail.com",
+    note: null,
+    primary: false,
+  },
+  {
+    id: "roblox",
+    icon: Compass,
+    label: "Roblox Profile",
+    value: "KaitouDev",
+    href: "https://www.roblox.com/users/10784666975/profile",
+    note: "See my profile",
+    primary: false,
+  },
+  {
+    id: "github",
+    icon: Github,
+    label: "GitHub",
+    value: "altairkaitou",
+    href: "https://github.com/altairkaitou",
+    note: null,
+    primary: false,
+  },
+  {
+    id: "twitter",
+    icon: Twitter,
+    label: "Twitter / X",
+    value: "@BkidDead",
+    href: "https://x.com/BkidDead",
+    note: null,
+    primary: false,
+  },
+];
 
 export default function ContactTab() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    service: "Roblox Scripting",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: "", email: "", service: "Roblox Scripting", message: "" });
-    }, 1200);
-  };
-
   return (
-    <div className="flex-1 flex flex-col lg:flex-row gap-6 w-full relative z-10 py-4 select-none">
-      {/* Brief details card */}
-      <div className="w-full lg:w-2/5 flex flex-col justify-between gap-6">
+    <div className="flex-1 flex flex-col justify-start w-full relative z-10 py-4 select-none">
+      <div className="mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
         <div>
           <h2 className="font-display text-2xl md:text-3xl font-medium text-[#eae6df] tracking-tight">
             Work With Me
           </h2>
-          <p className="text-sm text-neutral-500 font-sans mt-2 leading-relaxed">
-            Looking for a Roblox scripter or 3D modeler? Fill out the form or reach out directly. I respond fast.
+          <p className="text-sm text-neutral-500 font-sans mt-2 leading-relaxed max-w-md">
+            Best way to reach me is Discord. Drop a message with what you need and I will get back to you the same day.
           </p>
-
-          <div className="mt-8 flex flex-col gap-4 font-sans text-sm text-neutral-400">
-            <div className="flex items-center gap-3">
-              <Mail className="w-4 h-4 text-[#eae6df]" />
-              <span>leminhgiabao@gmail.com</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <MessageSquare className="w-4 h-4 text-[#eae6df]" />
-              <span>Discord: kaitou6980</span>
-            </div>
-          </div>
         </div>
 
-        {/* Social channels widget */}
-        <div className="mt-6 flex flex-col gap-4 pt-6 border-t border-white/5">
-          <h4 className="text-[10px] font-mono uppercase tracking-widest text-neutral-500">
-            Find Me On
-          </h4>
-          <div className="flex items-center gap-3 flex-wrap">
-            <a
-              href="https://github.com/altairkaitou"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border border-white/5 bg-white/[0.02] flex items-center justify-center text-neutral-400 hover:text-[#eae6df] hover:border-white/15 transition-colors cursor-pointer"
-            >
-              <Github className="w-4 h-4" />
-            </a>
-            <a
-              href="https://x.com/BkidDead"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border border-white/5 bg-white/[0.02] flex items-center justify-center text-neutral-400 hover:text-[#eae6df] hover:border-white/15 transition-colors cursor-pointer"
-            >
-              <Twitter className="w-4 h-4" />
-            </a>
-            <a
-              href="https://www.roblox.com/users/10784666975/profile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 h-10 rounded-full border border-white/5 bg-white/[0.02] flex items-center justify-center font-mono text-[10px] uppercase font-semibold text-neutral-400 hover:text-[#eae6df] hover:border-white/15 transition-colors cursor-pointer gap-1.5"
-            >
-              <Compass className="w-3.5 h-3.5" />
-              <span>Roblox Profile</span>
-            </a>
-          </div>
-        </div>
+        {/* Availability badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3 }}
+          className={`flex items-center gap-2.5 px-4 py-2 rounded-full border text-sm font-sans font-medium self-start sm:self-auto ${
+            available
+              ? "bg-emerald-950/40 border-emerald-800/40 text-emerald-400"
+              : "bg-neutral-900 border-white/5 text-neutral-500"
+          }`}
+        >
+          <span className={`w-2 h-2 rounded-full ${available ? "bg-emerald-400 animate-pulse" : "bg-neutral-600"}`} />
+          {available ? "Available for commissions" : "Currently unavailable"}
+        </motion.div>
       </div>
 
-      {/* Form Card */}
-      <div className="w-full lg:w-3/5 bg-[#0f0f0f] border border-white/5 rounded-2xl p-6 md:p-8 relative overflow-hidden">
-        <AnimatePresence mode="wait">
-          {!submitted ? (
-            <motion.form
-              key="contact-form"
-              onSubmit={handleSubmit}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="flex flex-col gap-5 h-full text-left"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="user-name" className="text-[10px] font-mono uppercase tracking-wider text-neutral-500">
-                    Your Name
-                  </label>
-                  <input
-                    id="user-name"
-                    required
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-[#080809] border border-white/5 focus:border-white/15 rounded-xl px-4 py-3 text-sm text-[#eae6df] outline-none font-sans"
-                    placeholder="Your name"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="user-email" className="text-[10px] font-mono uppercase tracking-wider text-neutral-500">
-                    Your Email
-                  </label>
-                  <input
-                    id="user-email"
-                    required
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#080809] border border-white/5 focus:border-white/15 rounded-xl px-4 py-3 text-sm text-[#eae6df] outline-none font-sans"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label htmlFor="service-type" className="text-[10px] font-mono uppercase tracking-wider text-neutral-500">
-                  What Do You Need?
-                </label>
-                <select
-                  id="service-type"
-                  value={formData.service}
-                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full bg-[#080809] border border-white/5 focus:border-white/15 rounded-xl px-4 py-3 text-sm text-[#eae6df] outline-none font-sans appearance-none select-theme cursor-pointer"
-                >
-                  <option value="Roblox Scripting">Roblox Scripting / Game Systems</option>
-                  <option value="3D Modeling">3D Modeling</option>
-                  <option value="UI Development">UI Development</option>
-                  <option value="General Discussion">General Discussion</option>
-                </select>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label htmlFor="user-message" className="text-[10px] font-mono uppercase tracking-wider text-neutral-500">
-                  Tell Me About Your Project
-                </label>
-                <textarea
-                  id="user-message"
-                  required
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-[#080809] border border-white/5 focus:border-white/15 rounded-xl px-4 py-3 text-sm text-[#eae6df] outline-none font-sans resize-none"
-                  placeholder="What are you building? What do you need help with?"
-                />
-              </div>
-
-              <button
-                id="submit-brief-btn"
-                disabled={isSubmitting}
-                type="submit"
-                className="self-start group flex items-center justify-center gap-3 bg-[#eae6df] hover:bg-white disabled:bg-neutral-800 text-[#0a0a0a] disabled:text-neutral-500 rounded-full px-6 py-3 font-sans font-medium text-sm transition-all duration-300 hover:scale-[1.02] cursor-pointer disabled:cursor-not-allowed mt-2 select-none"
-              >
-                <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
-                <Send className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-              </button>
-            </motion.form>
-          ) : (
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
+        }}
+        className="flex flex-col gap-3 max-w-xl"
+      >
+        {links.map((link) => {
+          const Icon = link.icon;
+          const inner = (
             <motion.div
-              key="submission-success"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              className="flex flex-col items-center justify-center text-center py-12 h-full"
+              key={link.id}
+              variants={{
+                hidden: { y: 16, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { type: "spring", damping: 20, stiffness: 100 } },
+              }}
+              className={`group flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border transition-all duration-300 ${
+                link.primary
+                  ? "bg-[#eae6df]/[0.04] border-[#eae6df]/10 hover:border-[#eae6df]/20"
+                  : "bg-[#0f0f0f] border-white/5 hover:border-white/10"
+              }`}
             >
-              <CheckCircle2 className="w-12 h-12 text-[#eae6df] mb-4 animate-bounce" />
-              <h3 className="font-display text-2xl font-medium text-[#eae6df] mb-2">
-                Message Sent
-              </h3>
-              <p className="text-sm text-neutral-400 font-sans max-w-xs leading-relaxed mb-6 font-light">
-                Got it. I will get back to you as soon as possible.
-              </p>
-              <button
-                id="reset-form-btn"
-                onClick={() => setSubmitted(false)}
-                className="text-xs font-mono uppercase tracking-widest text-neutral-500 hover:text-[#eae6df] transition-colors border-b border-white/10 hover:border-[#eae6df]"
-              >
-                Send Another Message
-              </button>
+              <div className="flex items-center gap-4">
+                <div className={`w-9 h-9 rounded-xl flex items-center justify-center border ${
+                  link.primary
+                    ? "bg-[#eae6df]/[0.06] border-[#eae6df]/10"
+                    : "bg-white/[0.03] border-white/5"
+                }`}>
+                  <Icon className={`w-4 h-4 ${link.primary ? "text-[#eae6df]" : "text-neutral-400 group-hover:text-[#eae6df]"} transition-colors`} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-0.5">{link.label}</p>
+                  <p className={`text-sm font-sans font-medium ${link.primary ? "text-[#eae6df]" : "text-neutral-300"}`}>{link.value}</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2">
+                {link.note && (
+                  <span className="text-[10px] font-mono text-neutral-600 hidden sm:block">{link.note}</span>
+                )}
+                {link.href && (
+                  <ExternalLink className="w-3.5 h-3.5 text-neutral-600 group-hover:text-neutral-400 transition-colors" />
+                )}
+              </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+          );
+
+          return link.href ? (
+            <a key={link.id} href={link.href} target="_blank" rel="noopener noreferrer" className="block">
+              {inner}
+            </a>
+          ) : (
+            <div key={link.id}>{inner}</div>
+          );
+        })}
+      </motion.div>
     </div>
   );
 }

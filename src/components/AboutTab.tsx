@@ -75,21 +75,6 @@ export default function AboutTab({ onViewPortfolio }: AboutTabProps) {
               ))}
             </h1>
             
-            {/* Superscript Asterisk */}
-            <motion.span
-              initial={{ scale: 0, rotate: -45, opacity: 0 }}
-              animate={{ scale: 1, rotate: 0, opacity: 1 }}
-              transition={{
-                type: "spring",
-                damping: 10,
-                stiffness: 80,
-                delay: 0.8,
-              }}
-              style={{ textShadow: "0 4px 12px rgba(0,0,0,0.5)" }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#eae6df] ml-1 md:ml-2 mt-4 select-none font-display"
-            >
-              *
-            </motion.span>
           </div>
         </motion.div>
 

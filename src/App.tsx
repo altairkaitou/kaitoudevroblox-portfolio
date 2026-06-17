@@ -6,7 +6,6 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import AboutTab from "./components/AboutTab";
-import ProjectsTab from "./components/ProjectsTab";
 import RobloxTab from "./components/RobloxTab";
 import BlenderTab from "./components/BlenderTab";
 import ContactTab from "./components/ContactTab";
@@ -19,9 +18,7 @@ export default function App() {
   const renderTabContent = () => {
     switch (activeTab) {
       case Tab.About:
-        return <AboutTab onViewPortfolio={() => setActiveTab(Tab.Projects)} />;
-      case Tab.Projects:
-        return <ProjectsTab />;
+        return <AboutTab onViewScripting={() => setActiveTab(Tab.Roblox)} />;
       case Tab.Roblox:
         return <RobloxTab />;
       case Tab.Blender:
@@ -29,7 +26,7 @@ export default function App() {
       case Tab.Contact:
         return <ContactTab />;
       default:
-        return <AboutTab onViewPortfolio={() => setActiveTab(Tab.Projects)} />;
+        return <AboutTab onViewScripting={() => setActiveTab(Tab.Roblox)} />;
     }
   };
 

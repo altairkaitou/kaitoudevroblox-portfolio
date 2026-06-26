@@ -20,6 +20,7 @@ import {
 import { motion } from "motion/react";
 
 const gameplayVideoSrc = "/videos/ability-training-arena-demo.mp4";
+const entroVideoSrc = "/videos/entro-map-skill-demo.mp4";
 
 const demoLinks = {
   play: "https://www.roblox.com/games/78969513676638/Ability-Training-Arena",
@@ -137,30 +138,50 @@ export default function RobloxTab() {
               </p>
 
               <div className="mt-8 inline-flex rounded-full border border-white/[0.075] bg-black/25 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-neutral-400">
-                Solo project — in active development
+                Solo project - in active development
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col justify-center p-5 md:p-6">
-            <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[#a7c7ff]/75">
-              Tech stack and scope
+          <div className="flex flex-col justify-center gap-5 p-5 md:p-6">
+            <div className="group/entro-media relative aspect-video overflow-hidden rounded-[22px] border border-white/[0.075] bg-black shadow-[0_18px_60px_rgba(0,0,0,0.24)]">
+              <video
+                className="h-full w-full scale-[1.01] object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/entro-media:scale-[1.035]"
+                src={entroVideoSrc}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="ENTRO map skill gameplay preview"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_16%,transparent_42%,rgba(0,0,0,0.34)_100%)]" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 to-transparent" />
+              <div className="pointer-events-none absolute left-3 top-3 rounded-full border border-white/10 bg-black/45 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-white/75 backdrop-blur-md">
+                Project glimpse
+              </div>
             </div>
-            <h4 className="font-display text-2xl md:text-3xl font-medium tracking-tight text-[#eae6df]">
-              Open-source Roblox tooling I already work with.
-            </h4>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-neutral-500">
-              Source-controlled builds, persistent player data, custom UI, async flows, event signaling, and cleanup/lifetime management.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {entroBadges.map((badge) => (
-                <span
-                  key={badge}
-                  className="rounded-full border border-white/[0.075] bg-black/20 px-3 py-1.5 text-xs text-neutral-400"
-                >
-                  {badge}
-                </span>
-              ))}
+
+            <div>
+              <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[#a7c7ff]/75">
+                Tech stack and scope
+              </div>
+              <h4 className="font-display text-2xl md:text-3xl font-medium tracking-tight text-[#eae6df]">
+                Open-source Roblox tooling I already work with.
+              </h4>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-neutral-500">
+                Source-controlled builds, persistent player data, custom UI, async flows, event signaling, and cleanup/lifetime management.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {entroBadges.map((badge) => (
+                  <span
+                    key={badge}
+                    className="rounded-full border border-white/[0.075] bg-black/20 px-3 py-1.5 text-xs text-neutral-400"
+                  >
+                    {badge}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

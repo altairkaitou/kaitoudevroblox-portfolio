@@ -166,9 +166,6 @@ export default function RobloxTab() {
                         One public place, one direct Luau script link, and visible server-side combat behavior.
                       </p>
                     </div>
-                    <div className="shrink-0 rounded-full border border-[#a7c7ff]/15 bg-[#a7c7ff]/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#c6dbff]">
-                      HiddenDevs ready
-                    </div>
                   </div>
                 </div>
               </>
@@ -230,7 +227,7 @@ export default function RobloxTab() {
               Ability Training Arena
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-neutral-400">
-              A HiddenDevs-ready Luau demo built as one server Script. It validates player casts, positions a CFrame ground wave, queries targets, applies damage and knockback, then cleans temporary effects.
+              A playable Roblox Luau demo built around server-side combat logic. It validates player casts, positions a CFrame ground wave, queries targets, applies damage and knockback, then cleans temporary effects.
             </p>
           </div>
 

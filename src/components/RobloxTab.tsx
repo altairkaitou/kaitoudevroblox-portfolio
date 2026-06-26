@@ -98,46 +98,80 @@ export default function RobloxTab() {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 items-start xl:grid-cols-[minmax(0,1.18fr)_minmax(360px,0.82fr)] gap-5 md:gap-6">
+      <div className="grid grid-cols-1 items-stretch xl:grid-cols-[minmax(0,1.18fr)_minmax(360px,0.82fr)] gap-5 md:gap-6">
         <motion.section
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          className="group/video self-start rounded-[28px] bg-white/[0.035] p-1.5 ring-1 ring-white/[0.075] shadow-[0_24px_80px_rgba(0,0,0,0.22)]"
+          className="group/video h-full rounded-[28px] bg-white/[0.035] p-1.5 ring-1 ring-white/[0.075] shadow-[0_24px_80px_rgba(0,0,0,0.22)]"
         >
-          <div className="relative overflow-hidden rounded-[22px] bg-[#080909] ring-1 ring-white/[0.07]">
+          <div className="relative flex h-full flex-col overflow-hidden rounded-[22px] bg-[#080909] ring-1 ring-white/[0.07]">
             {gameplayVideoSrc ? (
-              <div className="relative aspect-video w-full overflow-hidden bg-black">
-                <video
-                  className="h-full w-full scale-[1.012] object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/video:scale-[1.035]"
-                  src={gameplayVideoSrc}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-label="Ability Training Arena gameplay preview"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,transparent_42%,rgba(0,0,0,0.34)_100%)]" />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/55 to-transparent" />
-                <div className="pointer-events-none absolute left-3 top-3 flex items-center gap-2 rounded-full border border-white/10 bg-black/45 px-2.5 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/80 backdrop-blur-md sm:left-4 sm:top-4 sm:px-3 sm:text-[10px] sm:tracking-[0.18em]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#85ffad] shadow-[0_0_14px_rgba(133,255,173,0.85)]" />
-                  Live demo
-                </div>
-                <div className="pointer-events-none absolute bottom-3 left-3 right-3 flex flex-wrap items-end justify-between gap-3 sm:bottom-4 sm:left-4 sm:right-4">
-                  <div>
-                    <p className="font-display text-sm font-semibold leading-none tracking-tight text-white sm:text-xl md:text-2xl">
-                      Ability Training Arena
-                    </p>
-                    <p className="mt-1 hidden max-w-md text-xs leading-relaxed text-white/65 sm:block md:text-sm">
-                      Server cast validation, CFrame wave targeting, knockback, and runtime feedback in one Roblox place.
-                    </p>
+              <>
+                <div className="relative aspect-video w-full shrink-0 overflow-hidden bg-black">
+                  <video
+                    className="h-full w-full scale-[1.012] object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/video:scale-[1.035]"
+                    src={gameplayVideoSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label="Ability Training Arena gameplay preview"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,transparent_42%,rgba(0,0,0,0.34)_100%)]" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/55 to-transparent" />
+                  <div className="pointer-events-none absolute left-3 top-3 flex items-center gap-2 rounded-full border border-white/10 bg-black/45 px-2.5 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/80 backdrop-blur-md sm:left-4 sm:top-4 sm:px-3 sm:text-[10px] sm:tracking-[0.18em]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#85ffad] shadow-[0_0_14px_rgba(133,255,173,0.85)]" />
+                    Live demo
                   </div>
-                  <div className="hidden shrink-0 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-white/70 backdrop-blur-md sm:block">
-                    5 skeleton targets
+                  <div className="pointer-events-none absolute bottom-3 left-3 right-3 flex flex-wrap items-end justify-between gap-3 sm:bottom-4 sm:left-4 sm:right-4">
+                    <div>
+                      <p className="font-display text-sm font-semibold leading-none tracking-tight text-white sm:text-xl md:text-2xl">
+                        Ability Training Arena
+                      </p>
+                      <p className="mt-1 hidden max-w-md text-xs leading-relaxed text-white/65 sm:block md:text-sm">
+                        Server cast validation, CFrame wave targeting, knockback, and runtime feedback in one Roblox place.
+                      </p>
+                    </div>
+                    <div className="hidden shrink-0 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-white/70 backdrop-blur-md sm:block">
+                      5 skeleton targets
+                    </div>
                   </div>
                 </div>
-              </div>
+
+                <div className="relative flex flex-1 flex-col justify-between gap-4 border-t border-white/[0.07] bg-[radial-gradient(circle_at_10%_0%,rgba(167,199,255,0.09),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.01))] p-4 md:p-5">
+                  <div className="grid grid-cols-3 gap-2 md:gap-3">
+                    {proofStats.map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="rounded-2xl border border-white/[0.075] bg-black/25 px-3 py-3 md:px-4 md:py-4"
+                      >
+                        <div className="font-display text-2xl md:text-3xl font-semibold tabular-nums text-[#eae6df]">
+                          {stat.value}
+                        </div>
+                        <div className="mt-1 text-[10px] md:text-xs text-neutral-500">
+                          {stat.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-col gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.025] p-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#a7c7ff]/75">
+                        Submission proof
+                      </p>
+                      <p className="mt-1 max-w-lg text-sm leading-relaxed text-neutral-400">
+                        One public place, one direct Luau script link, and visible server-side combat behavior.
+                      </p>
+                    </div>
+                    <div className="shrink-0 rounded-full border border-[#a7c7ff]/15 bg-[#a7c7ff]/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[#c6dbff]">
+                      HiddenDevs ready
+                    </div>
+                  </div>
+                </div>
+              </>
             ) : (
               <div className="relative flex min-h-[340px] md:min-h-[440px] flex-col justify-between overflow-hidden p-5 md:p-8 technical-grid">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(167,199,255,0.18),transparent_28%),radial-gradient(circle_at_82%_78%,rgba(234,230,223,0.08),transparent_32%)]" />

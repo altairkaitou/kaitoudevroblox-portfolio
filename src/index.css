@@ -28,3 +28,36 @@
   position: relative;
 }
 
+.technical-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.media-scan {
+  animation: media-scan 5.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes media-scan {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(440px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-scan {
+    animation: none;
+  }
+}

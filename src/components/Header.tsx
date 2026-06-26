@@ -37,8 +37,8 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
       </svg>
 
       {/* Center Cutout holding Navbar */}
-      <div className="flex-shrink-0 h-7 border-t border-white/5 flex items-center px-4 sm:px-6 md:px-10 bg-[#0d0d0d]">
-        <nav className="flex items-center gap-1 sm:gap-2 md:gap-4 lg:gap-8 overflow-x-auto scrollbar-none max-w-[calc(100vw-6rem)] py-1">
+      <div className="flex-shrink-0 h-7 border-t border-white/5 flex items-center px-2 sm:px-6 md:px-10 bg-[#0d0d0d]">
+        <nav className="flex items-center gap-1 sm:gap-2 md:gap-4 lg:gap-8 overflow-x-auto scrollbar-none max-w-[calc(100vw-4.5rem)] sm:max-w-[calc(100vw-6rem)] py-1">
           {tabs.map((tab) => {
             const isActive = activeTab === tab;
             return (
@@ -46,7 +46,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
                 key={tab}
                 id={`nav-${tab.toLowerCase().replace(/\s+/g, "-")}`}
                 onClick={() => setActiveTab(tab)}
-                className={`relative px-3 py-1 font-sans text-xs sm:text-sm tracking-wide font-medium transition-colors duration-300 outline-none whitespace-nowrap cursor-pointer ${
+                className={`relative px-1.5 sm:px-3 py-1 font-sans text-[11px] sm:text-sm tracking-wide font-medium transition-colors duration-300 outline-none whitespace-nowrap cursor-pointer ${
                   isActive ? "text-[#eae6df]" : "text-neutral-500 hover:text-neutral-300"
                 }`}
               >

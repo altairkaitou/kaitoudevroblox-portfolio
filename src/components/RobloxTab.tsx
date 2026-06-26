@@ -32,35 +32,16 @@ const proofStats = [
   { value: "5", label: "skeleton targets" },
 ];
 
-const entroHighlights = [
-  {
-    title: "PoE-style stat math",
-    body: "Base stats feed gear affix pooling, one increased pool, then separate more multipliers for final combat values.",
-  },
-  {
-    title: "Server-authoritative casts",
-    body: "Two-phase precast and hit execution validates book, weapon gate, mana, cooldown, target data, and pending-hit TTL.",
-  },
-  {
-    title: "Support gem hooks",
-    body: "Socketed supports run onCastStart, modifyParams, modifyDamage, and onHit, with eligibility mirrored to UI and validated again server-side.",
-  },
-  {
-    title: "Data and replication layer",
-    body: "StateReplicator batches client display updates while ProfileStore, Rojo, and strict Luau keep persistence and source control disciplined.",
-  },
-];
-
 const entroBadges = [
-  "Affix Pooling",
-  "More Multipliers",
-  "SupportEligibility",
-  "Batched Replication",
-  "DecorationEngine",
-  "React-Lua UI",
   "Strict Luau",
-  "ProfileStore",
   "Rojo",
+  "ProfileStore",
+  "React-Lua UI",
+  "Promise",
+  "Signal",
+  "Trove",
+  "Server-Authoritative",
+  "Data-Driven",
 ];
 
 const demonstratedSystems = [
@@ -152,39 +133,25 @@ export default function RobloxTab() {
                 ENTRO
               </h3>
               <p className="mt-5 max-w-xl text-sm md:text-base leading-relaxed text-neutral-400">
-                A solo Roblox ARPG project focused on reusable server systems: stat math, skill casting, support sockets, procedural maps, ProfileStore persistence, and full custom React-Lua UI for inventory, skill book, HUD, and XP.
+                A solo Roblox ARPG built with strict Luau, Rojo, ProfileStore, and React-Lua. Server-authoritative combat, data-driven skill and stat design, and full custom UI covering inventory, skill book, HUD, and XP bar.
               </p>
 
-              <div className="mt-8 grid grid-cols-3 gap-2 md:gap-3">
-                <div className="rounded-2xl border border-white/[0.075] bg-black/25 p-4">
-                  <div className="font-display text-2xl font-semibold text-[#eae6df]">3</div>
-                  <div className="mt-1 text-[10px] text-neutral-500">stat layers</div>
-                </div>
-                <div className="rounded-2xl border border-white/[0.075] bg-black/25 p-4">
-                  <div className="font-display text-2xl font-semibold text-[#eae6df]">4</div>
-                  <div className="mt-1 text-[10px] text-neutral-500">support hooks</div>
-                </div>
-                <div className="rounded-2xl border border-white/[0.075] bg-black/25 p-4">
-                  <div className="font-display text-2xl font-semibold text-[#eae6df]">5</div>
-                  <div className="mt-1 text-[10px] text-neutral-500">map phases</div>
-                </div>
+              <div className="mt-8 inline-flex rounded-full border border-white/[0.075] bg-black/25 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-neutral-400">
+                Solo project — in active development
               </div>
             </div>
           </div>
 
-          <div className="p-5 md:p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {entroHighlights.map((item) => (
-                <article
-                  key={item.title}
-                  className="rounded-2xl border border-white/[0.06] bg-white/[0.025] p-4 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-white/[0.13] hover:bg-white/[0.04]"
-                >
-                  <h4 className="text-sm font-semibold text-[#eae6df]">{item.title}</h4>
-                  <p className="mt-2 text-xs leading-relaxed text-neutral-500">{item.body}</p>
-                </article>
-              ))}
+          <div className="flex flex-col justify-center p-5 md:p-6">
+            <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.2em] text-[#a7c7ff]/75">
+              Tech stack and scope
             </div>
-
+            <h4 className="font-display text-2xl md:text-3xl font-medium tracking-tight text-[#eae6df]">
+              Open-source Roblox tooling I already work with.
+            </h4>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-neutral-500">
+              Source-controlled builds, persistent player data, custom UI, async flows, event signaling, and cleanup/lifetime management.
+            </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {entroBadges.map((badge) => (
                 <span

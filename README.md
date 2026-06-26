@@ -1,4 +1,4 @@
-# KaitouDev Roblox Portfolio
+# KAITOU Roblox Portfolio
 
 Portfolio site for Roblox scripting commissions.
 

@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 
-const gameplayVideoSrc = "";
+const gameplayVideoSrc = "/videos/ability-training-arena-demo.mp4";
 
 const demoLinks = {
   play: "https://www.roblox.com/games/78969513676638/Ability-Training-Arena",
@@ -27,7 +27,7 @@ const demoLinks = {
 };
 
 const proofStats = [
-  { value: "756", label: "Luau code lines" },
+  { value: "666", label: "Luau code lines" },
   { value: "1", label: "server Script" },
   { value: "5", label: "skeleton targets" },
 ];
@@ -114,6 +114,7 @@ export default function RobloxTab() {
                 muted
                 loop
                 playsInline
+                preload="metadata"
                 aria-label="Ability Training Arena gameplay preview"
               />
             ) : (

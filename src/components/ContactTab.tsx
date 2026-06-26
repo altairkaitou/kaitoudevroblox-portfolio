@@ -7,7 +7,9 @@ import React from "react";
 import { MessageSquare, Mail, Github, Twitter, Compass, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
 
-const available = true; // toggle this to false when busy
+const contactConfig = {
+  availableForCommissions: true,
+};
 
 const links = [
   {
@@ -76,13 +78,13 @@ export default function ContactTab() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3 }}
           className={`flex items-center gap-2.5 px-4 py-2 rounded-full border text-sm font-sans font-medium self-start sm:self-auto ${
-            available
+            contactConfig.availableForCommissions
               ? "bg-emerald-950/40 border-emerald-800/40 text-emerald-400"
               : "bg-neutral-900 border-white/5 text-neutral-500"
           }`}
         >
-          <span className={`w-2 h-2 rounded-full ${available ? "bg-emerald-400 animate-pulse" : "bg-neutral-600"}`} />
-          {available ? "Available for commissions" : "Currently unavailable"}
+          <span className={`w-2 h-2 rounded-full ${contactConfig.availableForCommissions ? "bg-emerald-400 animate-pulse" : "bg-neutral-600"}`} />
+          {contactConfig.availableForCommissions ? "Available for commissions" : "Currently unavailable"}
         </motion.div>
       </div>
 

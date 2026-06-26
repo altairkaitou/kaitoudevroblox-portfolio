@@ -7,7 +7,6 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import AboutTab from "./components/AboutTab";
 import RobloxTab from "./components/RobloxTab";
-import BlenderTab from "./components/BlenderTab";
 import ContactTab from "./components/ContactTab";
 import { Tab } from "./types";
 import { motion, AnimatePresence } from "motion/react";
@@ -21,8 +20,6 @@ export default function App() {
         return <AboutTab onViewScripting={() => setActiveTab(Tab.Roblox)} />;
       case Tab.Roblox:
         return <RobloxTab />;
-      case Tab.Blender:
-        return <BlenderTab />;
       case Tab.Contact:
         return <ContactTab />;
       default:

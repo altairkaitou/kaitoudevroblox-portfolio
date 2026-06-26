@@ -88,7 +88,7 @@ export default function AboutTab({ onViewScripting }: AboutTabProps) {
             style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}
             className="font-sans text-sm md:text-base leading-relaxed text-neutral-200 font-light pr-2"
           >
-            Roblox scripter and 3D modeler with a strong foundation in software engineering. Formerly a full stack developer, now building immersive Roblox experiences through Luau scripting and Blender modeling.
+            Roblox scripter with full-stack engineering background. I design scalable systems with clear client-server boundaries, server-side validation, and maintainable Luau architecture so projects do not need a rewrite a few months later.
           </p>
 
           <button
@@ -96,7 +96,7 @@ export default function AboutTab({ onViewScripting }: AboutTabProps) {
             onClick={onViewScripting}
             className="group relative flex items-center justify-between gap-5 bg-[#eae6df] hover:bg-white text-[#0a0a0a] rounded-full pl-6 pr-2 py-2 outline-none font-sans font-medium text-sm sm:text-base cursor-pointer shadow-xl transition-all duration-300 hover:scale-[1.03] select-none"
           >
-            <span>View scripting</span>
+            <span>View my work</span>
             <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#0a0a0a] text-[#eae6df] flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
               <ArrowRight className="w-4 h-4" />
             </div>

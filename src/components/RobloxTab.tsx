@@ -32,6 +32,37 @@ const proofStats = [
   { value: "5", label: "skeleton targets" },
 ];
 
+const entroHighlights = [
+  {
+    title: "PoE-style stat math",
+    body: "Base stats feed gear affix pooling, one increased pool, then separate more multipliers for final combat values.",
+  },
+  {
+    title: "Server-authoritative casts",
+    body: "Two-phase precast and hit execution validates book, weapon gate, mana, cooldown, target data, and pending-hit TTL.",
+  },
+  {
+    title: "Support gem hooks",
+    body: "Socketed supports run onCastStart, modifyParams, modifyDamage, and onHit, with eligibility mirrored to UI and validated again server-side.",
+  },
+  {
+    title: "Data and replication layer",
+    body: "StateReplicator batches client display updates while ProfileStore, Rojo, and strict Luau keep persistence and source control disciplined.",
+  },
+];
+
+const entroBadges = [
+  "Affix Pooling",
+  "More Multipliers",
+  "SupportEligibility",
+  "Batched Replication",
+  "DecorationEngine",
+  "React-Lua UI",
+  "Strict Luau",
+  "ProfileStore",
+  "Rojo",
+];
+
 const demonstratedSystems = [
   {
     icon: ShieldCheck,
@@ -59,17 +90,17 @@ const commissionAreas = [
   {
     icon: Sparkles,
     title: "Ability systems",
-    body: "Skill casts, cooldowns, hit detection, status effects, and combat readability.",
+    body: "Skill cast pipelines, server cooldowns and validation, support gem hooks, mana costs, and VFX broadcast.",
   },
   {
     icon: Gamepad2,
     title: "NPC gameplay",
-    body: "Enemy encounters, dummy testing areas, patrol behavior, and server-side combat rules.",
+    body: "Mob behavior, server-owned hit detection, target dedupe, encounters, patrol logic, and test arenas.",
   },
   {
     icon: Database,
     title: "Progression logic",
-    body: "Inventory, loot, stats, save flow, and data-driven balancing hooks.",
+    body: "PoE-style affixes, stat recalc pipelines, inventory, loot, ProfileStore save flow, and balance data.",
   },
   {
     icon: Code2,
@@ -91,12 +122,82 @@ export default function RobloxTab() {
           Roblox scripting
         </p>
         <h2 className="font-display text-3xl md:text-5xl font-medium text-[#eae6df] tracking-tight leading-[0.98] text-balance">
-          Server-side systems clients can test.
+          Roblox systems built to survive real projects.
         </h2>
         <p className="mt-4 max-w-xl text-sm md:text-base text-neutral-400 leading-relaxed">
-          I build Roblox combat and progression logic with playable proofs, readable Luau, and server authority where it matters.
+          I build combat, progression, data, UI, and procedural gameplay with server authority, clear validation, and code that can keep scaling.
         </p>
       </motion.div>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
+        className="mb-6 overflow-hidden rounded-[28px] border border-white/[0.075] bg-[#101011] shadow-[0_24px_80px_rgba(0,0,0,0.2)]"
+      >
+        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+          <div className="relative overflow-hidden border-b border-white/[0.075] p-6 md:p-8 xl:border-b-0 xl:border-r">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(167,199,255,0.14),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.045),transparent_42%)]" />
+            <div className="relative">
+              <div className="mb-5 flex flex-wrap items-center gap-3">
+                <span className="inline-flex rounded-full border border-white/10 bg-white/[0.035] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-400">
+                  Main system case study
+                </span>
+                <span className="inline-flex rounded-full border border-[#a7c7ff]/20 bg-[#a7c7ff]/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-[#c6dbff]">
+                  In Development
+                </span>
+              </div>
+
+              <h3 className="font-display text-4xl md:text-6xl font-medium leading-none tracking-tight text-[#eae6df]">
+                ENTRO
+              </h3>
+              <p className="mt-5 max-w-xl text-sm md:text-base leading-relaxed text-neutral-400">
+                A solo Roblox ARPG project focused on reusable server systems: stat math, skill casting, support sockets, procedural maps, ProfileStore persistence, and full custom React-Lua UI for inventory, skill book, HUD, and XP.
+              </p>
+
+              <div className="mt-8 grid grid-cols-3 gap-2 md:gap-3">
+                <div className="rounded-2xl border border-white/[0.075] bg-black/25 p-4">
+                  <div className="font-display text-2xl font-semibold text-[#eae6df]">3</div>
+                  <div className="mt-1 text-[10px] text-neutral-500">stat layers</div>
+                </div>
+                <div className="rounded-2xl border border-white/[0.075] bg-black/25 p-4">
+                  <div className="font-display text-2xl font-semibold text-[#eae6df]">4</div>
+                  <div className="mt-1 text-[10px] text-neutral-500">support hooks</div>
+                </div>
+                <div className="rounded-2xl border border-white/[0.075] bg-black/25 p-4">
+                  <div className="font-display text-2xl font-semibold text-[#eae6df]">5</div>
+                  <div className="mt-1 text-[10px] text-neutral-500">map phases</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-5 md:p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {entroHighlights.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-2xl border border-white/[0.06] bg-white/[0.025] p-4 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-white/[0.13] hover:bg-white/[0.04]"
+                >
+                  <h4 className="text-sm font-semibold text-[#eae6df]">{item.title}</h4>
+                  <p className="mt-2 text-xs leading-relaxed text-neutral-500">{item.body}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-5 flex flex-wrap gap-2">
+              {entroBadges.map((badge) => (
+                <span
+                  key={badge}
+                  className="rounded-full border border-white/[0.075] bg-black/20 px-3 py-1.5 text-xs text-neutral-400"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.section>
 
       <div className="grid grid-cols-1 items-stretch xl:grid-cols-[minmax(0,1.18fr)_minmax(360px,0.82fr)] gap-5 md:gap-6">
         <motion.section

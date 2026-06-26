@@ -1,6 +1,6 @@
 {
-  "name": "Helious",
-  "description": "Roblox and Blender developer portfolio featuring a folder tab hero section.",
+  "name": "KaitouDev Portfolio",
+  "description": "Roblox scripting portfolio for server-authoritative combat, progression, UI, and data systems.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

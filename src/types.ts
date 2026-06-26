@@ -6,7 +6,6 @@
 export enum Tab {
   About = "About Me",
   Roblox = "Scripting",
-  Blender = "3D Modeling",
   Contact = "Contact"
 }
 

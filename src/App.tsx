@@ -162,7 +162,7 @@ function Hero() {
           </div>
 
           <h1 className="max-w-4xl font-display text-5xl font-semibold leading-[0.92] tracking-tight text-[#f4f0ea] [text-shadow:0_2px_40px_rgba(0,0,0,0.55)] sm:text-6xl md:text-7xl lg:text-8xl">
-            Roblox scripting and gameplay systems that ship clean.
+            Roblox Systems Built to Ship.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-200 [text-shadow:0_1px_18px_rgba(0,0,0,0.5)] md:text-lg">
             I build server-client architecture, data saving, combat, progression, NPC gameplay, and custom UI with maintainable Luau that can survive real production.

@@ -115,6 +115,33 @@ export default function RobloxTab() {
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.65, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
+        className="mb-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4"
+      >
+        {commissionAreas.map((area) => {
+          const Icon = area.icon;
+          return (
+            <article
+              key={area.title}
+              className="group rounded-[22px] border border-white/[0.065] bg-[#0f0f10] p-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-white/[0.13] hover:bg-[#141415]"
+            >
+              <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-2xl bg-white/[0.035] text-neutral-400 ring-1 ring-white/[0.06] transition-colors duration-500 group-hover:text-[#eae6df]">
+                <Icon className="h-4 w-4" strokeWidth={1.8} />
+              </div>
+              <h3 className="font-display text-lg font-medium tracking-tight text-[#eae6df]">
+                {area.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-500">
+                {area.body}
+              </p>
+            </article>
+          );
+        })}
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
         className="mb-6 overflow-hidden rounded-[28px] border border-white/[0.075] bg-[#101011] shadow-[0_24px_80px_rgba(0,0,0,0.2)]"
       >
         <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
@@ -365,32 +392,6 @@ export default function RobloxTab() {
         </motion.aside>
       </div>
 
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.65, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-        className="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4"
-      >
-        {commissionAreas.map((area) => {
-          const Icon = area.icon;
-          return (
-            <article
-              key={area.title}
-              className="group rounded-[22px] border border-white/[0.065] bg-[#0f0f10] p-5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-white/[0.13] hover:bg-[#141415]"
-            >
-              <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-2xl bg-white/[0.035] text-neutral-400 ring-1 ring-white/[0.06] transition-colors duration-500 group-hover:text-[#eae6df]">
-                <Icon className="h-4 w-4" strokeWidth={1.8} />
-              </div>
-              <h3 className="font-display text-lg font-medium tracking-tight text-[#eae6df]">
-                {area.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-500">
-                {area.body}
-              </p>
-            </article>
-          );
-        })}
-      </motion.section>
     </div>
   );
 }

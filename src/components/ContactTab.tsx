@@ -70,6 +70,9 @@ export default function ContactTab() {
           <p className="text-sm text-neutral-500 font-sans mt-2 leading-relaxed max-w-md">
             Best way to reach me is Discord. Drop a message with what you need and I will get back to you the same day.
           </p>
+          <p className="text-xs text-neutral-600 font-sans mt-3 leading-relaxed max-w-md">
+            Pricing is based on scope and complexity. Send me a brief description of your project and I will give you a quote upfront before any work starts.
+          </p>
         </div>
 
         {/* Availability badge */}

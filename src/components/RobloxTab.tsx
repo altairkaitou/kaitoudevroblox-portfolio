@@ -71,23 +71,23 @@ const demonstratedSystems = [
 const commissionAreas = [
   {
     icon: Sparkles,
-    title: "Ability systems",
-    body: "Skill cast pipelines, server cooldowns and validation, support gem hooks, mana costs, and VFX broadcast.",
+    title: "Combat systems",
+    body: "Server-authoritative skill casting, hit detection, cooldown management, damage calculation, and status effects.",
   },
   {
     icon: Gamepad2,
-    title: "NPC gameplay",
-    body: "Mob behavior, server-owned hit detection, target dedupe, encounters, patrol logic, and test arenas.",
+    title: "NPC and AI",
+    body: "Enemy behavior, aggro logic, pathfinding, encounter scripting, and server-side interaction handling.",
   },
   {
     icon: Database,
-    title: "Progression logic",
-    body: "PoE-style affixes, stat recalc pipelines, inventory, loot, ProfileStore save flow, and balance data.",
+    title: "Progression and data",
+    body: "Stat systems, inventory, loot tables, player save and load logic, and data-driven balancing.",
   },
   {
     icon: Code2,
-    title: "Existing code help",
-    body: "Refactors, bug fixes, code review, and system cleanup for Roblox projects.",
+    title: "Code help",
+    body: "Refactors, bug fixes, code review, and cleanup for existing Roblox projects.",
   },
 ];
 

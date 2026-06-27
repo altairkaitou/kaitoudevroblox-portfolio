@@ -11,18 +11,18 @@ const titleText = "KAITOU";
 const strengths = [
   {
     icon: ShieldCheck,
-    title: "Server authority first",
-    body: "Combat, cooldowns, hit checks, and reward logic stay validated on the server.",
+    title: "Server-client architecture",
+    body: "Clear remote boundaries, server-owned rules, client feedback, and validation flows.",
   },
   {
     icon: Code2,
     title: "Systems, not snippets",
-    body: "Clean module boundaries, data-driven tuning, and code shaped for future features.",
+    body: "Reusable gameplay logic, clean module boundaries, and code shaped for future features.",
   },
   {
     icon: Database,
-    title: "Persistent gameplay",
-    body: "Progression, inventory, and save flows built around reliable player data.",
+    title: "Database",
+    body: "ProfileStore-backed save flows, player state, inventory data, and progression records.",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function AboutTab({ onViewScripting }: AboutTabProps) {
         >
           <div className="mb-5 flex flex-wrap items-center gap-3">
             <span className="rounded-full border border-white/10 bg-black/25 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.22em] text-[#a7c7ff]/85">
-              Roblox systems developer
+              Roblox developer
             </span>
             <span className="rounded-full border border-emerald-400/15 bg-emerald-400/[0.055] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-300/80">
               Scripting commissions
@@ -96,7 +96,7 @@ export default function AboutTab({ onViewScripting }: AboutTabProps) {
 
           <div className="mt-6 max-w-3xl">
             <p className="font-display text-2xl font-medium leading-[1.04] tracking-tight text-[#f2eee7] md:text-4xl">
-              Server-authoritative Roblox scripting for games that need to keep growing.
+              Roblox scripting for gameplay systems that need to keep growing.
             </p>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-300 md:text-base">
               I bring full-stack engineering habits into Roblox: clear client-server separation, strict validation, maintainable Luau architecture, and systems that do not need a rewrite after the prototype stage.

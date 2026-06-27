@@ -21,9 +21,9 @@ const workLinks = {
 };
 
 const navigation = [
+  { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
   { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -170,10 +170,10 @@ function Hero() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="#work"
+              href="#about"
               className="group inline-flex items-center justify-between gap-5 rounded-full bg-[#eae6df] py-3 pl-6 pr-2 text-sm font-semibold text-[#080909] shadow-[0_18px_50px_rgba(234,230,223,0.12)] transition-all duration-500 hover:bg-white active:scale-[0.98] sm:w-fit"
             >
-              View my work
+              About KAITOU
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#080909] text-[#eae6df] transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                 <ArrowRight className="h-4 w-4" />
               </span>
@@ -432,9 +432,9 @@ export default function App() {
       <div className="relative z-20">
         <Nav />
         <Hero />
+        <AboutSection />
         <WorkSection />
         <ServicesSection />
-        <AboutSection />
         <ContactSection />
       </div>
     </div>

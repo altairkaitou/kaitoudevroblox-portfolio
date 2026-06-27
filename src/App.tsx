@@ -161,10 +161,10 @@ function Hero() {
             </span>
           </div>
 
-          <h1 className="max-w-4xl font-display text-5xl font-semibold leading-[0.92] tracking-tight text-[#f4f0ea] sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="max-w-4xl font-display text-5xl font-semibold leading-[0.92] tracking-tight text-[#f4f0ea] [text-shadow:0_2px_40px_rgba(0,0,0,0.55)] sm:text-6xl md:text-7xl lg:text-8xl">
             Roblox scripting and gameplay systems that ship clean.
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-300 md:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-200 [text-shadow:0_1px_18px_rgba(0,0,0,0.5)] md:text-lg">
             I build server-client architecture, data saving, combat, progression, NPC gameplay, and custom UI with maintainable Luau that can survive real production.
           </p>
 
@@ -421,11 +421,11 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#070708] text-[#eae6df] font-sans">
       <div className="fixed inset-0 z-0 overflow-hidden">
-        <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover opacity-55">
+        <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover opacity-[0.72]">
           <source src="https://res.cloudinary.com/disuogo1r/video/upload/v1780588789/videohero_x0bjbl.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(255,94,102,0.13),transparent_28%),linear-gradient(180deg,rgba(7,7,8,0.58),rgba(7,7,8,0.94)_70%,#070708)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.032)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.024)_1px,transparent_1px)] bg-[size:64px_64px] opacity-20" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_8%,rgba(255,94,102,0.12),transparent_32%),linear-gradient(180deg,rgba(7,7,8,0.4),rgba(7,7,8,0.64)_58%,rgba(7,7,8,0.82))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.022)_1px,transparent_1px)] bg-[size:64px_64px] opacity-[0.1]" />
       </div>
       <div className="noise-overlay z-10" />
 

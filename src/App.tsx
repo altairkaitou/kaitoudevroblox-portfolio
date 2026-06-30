@@ -22,6 +22,7 @@ const workLinks = {
 
 const navigation = [
   { label: "About", href: "#about" },
+  { label: "Stack", href: "#stack" },
   { label: "Work", href: "#work" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
@@ -89,7 +90,36 @@ const proofStats = [
   { value: "6", label: "systems offered" },
 ];
 
-const tools = ["Strict Luau", "Rojo", "ProfileStore", "React-Lua", "Promise", "Signal", "Trove", "CFrame"];
+const tools = ["Strict Luau", "Rojo", "Wally", "ProfileStore", "React-Lua", "ReactRoblox", "Otter", "Signal", "Promise", "Trove", "CFrame"];
+
+const stackPillars = [
+  {
+    icon: ShieldCheck,
+    title: "Roblox production",
+    body: "Server-owned logic, remote validation, CFrame gameplay math, runtime cleanup, and data-driven configs.",
+  },
+  {
+    icon: Database,
+    title: "Database thinking",
+    body: "ProfileStore flows, schema discipline, persistence lifecycles, and backend habits from REST/database work.",
+  },
+  {
+    icon: Code2,
+    title: "UI and tooling",
+    body: "React-Lua interfaces, Rojo source control, Wally packages, Git workflow, and readable module boundaries.",
+  },
+];
+
+const libraryItems = [
+  ["ProfileStore", "Session-locked player data, profile reconciliation, save lifecycle, and shutdown-safe persistence."],
+  ["React-Lua / ReactRoblox", "Component-based Roblox UI for HUD, inventory, skill book, panels, and reusable interface parts."],
+  ["Otter", "Spring motion for UI feedback, modal transitions, and small interactions that feel responsive in-game."],
+  ["Signal", "Typed event channels for server systems such as map sessions, mob events, and decoupled gameplay services."],
+  ["Rojo + Wally", "Source-controlled Studio workflow with packages committed cleanly and synced into Roblox places."],
+  ["Promise / Trove", "Async flow and lifecycle cleanup patterns available when systems need explicit ownership boundaries."],
+];
+
+const softwareTags = ["REST API", "MySQL", "MongoDB", "Docker", "Git", "Python", "Go", "JavaScript", "Figma"];
 
 const briefItems = [
   "What system you need",
@@ -367,6 +397,89 @@ function AboutSection() {
   );
 }
 
+function TechStackSection() {
+  return (
+    <motion.section id="stack" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-120px" }} className="scroll-mt-24 px-4 py-16 md:px-6 md:py-24">
+      <div className="mx-auto max-w-6xl">
+        <SectionHeader
+          eyebrow="Tech stack"
+          title="Open-source tools, production habits, Roblox systems."
+          body="My strongest edge is combining Roblox scripting with software engineering fundamentals: data persistence, validation, modular architecture, UI structure, and source-controlled workflow."
+        />
+
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-12">
+          <article className="group relative overflow-hidden rounded-[30px] border border-white/[0.075] bg-[#101011]/90 p-6 shadow-[0_24px_90px_rgba(0,0,0,0.22)] md:p-8 lg:col-span-7">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#ff858b]/55 to-transparent" />
+            <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#ff5e66]/10 blur-3xl transition-opacity duration-700 group-hover:opacity-80" />
+
+            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-[#ff858b]">Systems I can build around</p>
+            <h3 className="mt-4 max-w-2xl font-display text-3xl font-semibold leading-[0.98] tracking-tight text-[#f4f0ea] md:text-5xl">
+              Codebase-first scripting, not one-off scripts.
+            </h3>
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-neutral-400 md:text-base">
+              From resume work in backend/frontend development to ENTRO's Roblox stack, I am comfortable with systems that need clean data flow, readable boundaries, and tooling that another developer can continue later.
+            </p>
+
+            <div className="mt-8 space-y-6">
+              {stackPillars.map((pillar) => {
+                const Icon = pillar.icon;
+                return (
+                  <div key={pillar.title} className="grid gap-4 border-t border-white/[0.075] pt-6 sm:grid-cols-[52px_1fr]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.035] text-[#ff858b] ring-1 ring-white/[0.07]">
+                      <Icon className="h-5 w-5" strokeWidth={1.8} />
+                    </div>
+                    <div>
+                      <h4 className="font-display text-xl font-semibold tracking-tight text-[#eae6df]">{pillar.title}</h4>
+                      <p className="mt-2 text-sm leading-relaxed text-neutral-500">{pillar.body}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </article>
+
+          <div className="grid gap-5 lg:col-span-5">
+            <article className="rounded-[30px] border border-white/[0.075] bg-[#0d0d0e]/90 p-6 md:p-7">
+              <div className="mb-5 flex items-center justify-between gap-4">
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-[#ff858b]">Open-source</p>
+                  <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight text-[#f4f0ea]">Libraries I can use</h3>
+                </div>
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#ff5e66]/10 text-[#ff858b] ring-1 ring-[#ff5e66]/15">
+                  <Sparkles className="h-4 w-4" strokeWidth={1.8} />
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {libraryItems.map(([name, detail]) => (
+                  <div key={name} className="border-t border-white/[0.065] pt-4">
+                    <p className="text-sm font-semibold text-[#eae6df]">{name}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-neutral-500">{detail}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
+
+            <article className="rounded-[30px] border border-white/[0.075] bg-[#101011]/85 p-6 md:p-7">
+              <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-neutral-500">Software base</p>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+                Backend and frontend experience gives me a better instinct for validation, API shape, debugging, database reliability, and maintainable team workflows.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {softwareTags.map((tag) => (
+                  <span key={tag} className="rounded-full border border-white/[0.075] bg-black/20 px-3 py-1.5 text-xs text-neutral-400">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </motion.section>
+  );
+}
+
 function ContactSection() {
   return (
     <motion.section id="contact" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-120px" }} className="scroll-mt-24 px-4 pb-20 pt-16 md:px-6 md:pb-28 md:pt-24">
@@ -433,6 +546,7 @@ export default function App() {
         <Nav />
         <Hero />
         <AboutSection />
+        <TechStackSection />
         <WorkSection />
         <ServicesSection />
         <ContactSection />

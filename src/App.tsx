@@ -17,7 +17,6 @@ import { motion } from "motion/react";
 
 const workLinks = {
   arenaPlace: "https://www.roblox.com/games/78969513676638/Ability-Training-Arena",
-  arenaCode: "https://github.com/altairkaitou/hidden-dev-luau-submission/blob/main/AbilityTrainingArena.server.lua",
 };
 
 const navigation = [
@@ -80,7 +79,6 @@ const workItems = [
     tags: ["666 lines", "1 server Script", "CFrame", "Physics", "Cleanup"],
     status: "Public demo",
     primaryLink: workLinks.arenaPlace,
-    secondaryLink: workLinks.arenaCode,
   },
 ];
 
